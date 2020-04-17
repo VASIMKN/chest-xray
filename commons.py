@@ -36,7 +36,6 @@ class classifier(nn.Module):
 
 def get_model():
     #checkpoint_path='xray_projectV4_2_densenet161_mila.pt'
-    checkpoint_path=r'C:\Users\VASIM KHAN\.cache\torch\checkpoints\densenet161-8d451a50.pth'
     model=models.densenet161(pretrained=True)
     model.classifier = classifier()
     model.load_state_dict(torch.load(checkpoint_path,map_location='cpu'),strict=False)
